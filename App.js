@@ -1,8 +1,9 @@
 import React from "react";
 
 import { Weather } from "./components/Weather";
-import { API_KEY } from "./utils/WeatherAPIKey";
 import { StyleSheet, Text, View } from "react-native";
+
+const API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
 
 export default class App extends React.Component {
   state = {
@@ -41,7 +42,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, weatherCondition, temperature } = this.state;
 
     return (
       <View style={styles.container}>
