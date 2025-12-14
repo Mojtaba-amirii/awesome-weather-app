@@ -14,11 +14,11 @@ const Weather = ({ weather, temperature }) => {
     >
       <View style={styles.headerContainer}>
         <MaterialCommunityIcons
-          size={72}
+          size={80}
           name={weatherConditions[weather].icon}
           color={"#fff"}
         />
-        <Text style={styles.tempText}>{temperature}</Text>
+        <Text style={styles.tempText}>{Math.round(temperature)}˚</Text>
       </View>
       <View style={styles.bodyContainer}>
         <Text style={styles.title}>{weatherConditions[weather].title}</Text>
@@ -30,15 +30,15 @@ const Weather = ({ weather, temperature }) => {
   );
 };
 
-Weather.PropTypes = {
+Weather.propTypes = {
   temperature: PropTypes.number.isRequired,
   weather: PropTypes.string,
 };
 
-const styles = StyleSheet({
+const styles = StyleSheet.create({
   weatherContainer: {
     flex: 1,
-    backgroundColor: "#f7b733",
+    width: "100%",
   },
   headerContainer: {
     flex: 1,
@@ -46,23 +46,28 @@ const styles = StyleSheet({
     justifyContent: "center",
   },
   tempText: {
-    fontSize: 48,
+    fontSize: 72,
     color: "#fff",
+    fontWeight: "bold",
   },
   bodyContainer: {
-    flex: 2,
+    flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-end",
-    paddingLeft: 25,
-    marginBottom: 40,
+    paddingLeft: 40,
+    paddingRight: 20,
+    marginBottom: 60,
   },
   title: {
-    fontSize: 48,
+    fontSize: 60,
     color: "#fff",
+    fontWeight: "bold",
+    marginBottom: 10,
   },
   subtitle: {
     fontSize: 24,
     color: "#fff",
+    fontWeight: "500",
   },
 });
 

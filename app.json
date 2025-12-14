@@ -3,6 +3,7 @@
     "name": "awesome-weather-app",
     "slug": "awesome-weather-app",
     "version": "1.0.0",
+    "scheme": "awesome-weather-app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
